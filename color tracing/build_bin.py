@@ -114,7 +114,6 @@ def get_hist(img):
             wei_c.append(wei)
             hist[color_bin] = hist[color_bin] + wei
     C = sum(wei_c)
-    #print('c',C)
     #normalize hist
     hist=[c_bin / C for c_bin in hist]
     #print(len(hist))
@@ -134,50 +133,24 @@ def get_similarity(hist1,hist2):
     return similar
 
 def meanshift_step(roi,roi_window,hist1,img):
-    # 1 calculate h2
-    # 2 calculate similarity
-    # 3 ca/culate new center
     box_cx, box_cy, box_w, box_h = roi_window
-    #print(box_w,box_h)
-    #len = len(roi)
-
     len = box_h*box_w
-
-    #print('roiwindow',roi_window)
     num = 0
     sim = []
-    # box_cx = box.x
-    # box_cy = box.y
-    # box_h = box.shape[0]
-    # box_w = box.shape[1]
-    #x_shift = 0
-    #y_shift = 0
-    sum_w = 0
-    # calcuate the hist2
-
     # caculate 2 simularity
-   # similarity = get_similarity(hist1,hist2)
-    #print("simi",similarity)
     # caculate new center
     while (num < 50):
         #print(num)
         x_shift = 0
         y_shift = 0
         sum_w = 0
-
-
-        #print('ce?',box_cx,box_cy)
-
         hist2 = color_hist(roi)
-        #bin = gray_16bin()
-
         similarity = get_similarity(hist1, hist2)
         s_mean=np.mean(similarity)
         sim.append(s_mean)
         print("simi", s_mean)
         num = num+1
         countt = 0
-        #print('roi_error',roi.shape)
         for col in range(0, box_h):
             for row in range(0,box_w):
 
@@ -185,17 +158,10 @@ def meanshift_step(roi,roi_window,hist1,img):
                 qr = img[col][row][0] / 16
                 qg = img[col][row][1] / 16
                 qb = img[col][row][2] / 16
+                #for each pixel find which bin it belongs to
                 q_temp = qr * 239 + qg * 16 + qb
                 q_temp = np.around(q_temp).astype(int)
-
-                #gray meanshift
-                #color = roi[col][row]
-
-                #color_bin = bin[color]
                 sum_w = sum_w + similarity[q_temp]
-                #print(sum_w)
-                #print('change',box_cx,box_cy)
-                #print(row,col)
                 # version 2
 
                 #x_shift = row*similarity[color_bin]+x_shift
@@ -208,10 +174,6 @@ def meanshift_step(roi,roi_window,hist1,img):
                 # x_shift = x_shift + similarity[color_bin]*(row-box_w/2)
                 y_shift = y_shift + similarity[q_temp] * (col - box_h / 2)
                 x_shift = x_shift + similarity[q_temp] * (row - box_w / 2)
-
-                #print("step shift",x_shift,y_shift)
-
-        #print('before nol',x_shift,y_shift)
         #shift distance
 
         #shift version 1
@@ -221,33 +183,26 @@ def meanshift_step(roi,roi_window,hist1,img):
         y_shift = y_shift/sum_w
         x_shift = x_shift/sum_w
 
-        #print("firstshift", x_shift, y_shift)
-
-        #print('beforeshift',box_cx,box_cy)
         #new center version 1
 
-        #
         box_cx = box_cx + x_shift
         box_cy = box_cy + y_shift
 
         # box_cx = x_shift/len
         # box_cy = y_shift/len
-
-        #print('aftershift',box_cx,box_cy)
-        # left top
         # box_cx = box_cx-box_w/2
         # box_cy = box_cy+box_h/2
-        # print('left top',box_cx,box_cy)
+
         box_cx = np.around(box_cx)
         box_cx = box_cx.astype(int)
         box_cy = np.around(box_cy)
         box_cy = box_cy.astype(int)
-        #print('centerx',box_cx,box_cy)
+
 
         #test change x and y
         roi = img[box_cy:box_cy + box_h, box_cx:box_cx + box_w]
 
-        #show
+        #show the tracing locus
 
         # l=np.around(box_cx + box_w / 2 - 3)
         # t=np.around(box_cy - box_h / 2 + 3)
@@ -262,10 +217,6 @@ def meanshift_step(roi,roi_window,hist1,img):
         # cv2.waitKey(0)
 
         #roi = img[box_cx:box_cx + box_h, box_cy:box_cy + box_w]
-        #print(roi.shape)
-
-        #print(num)
-
 
    # print("final",box_cx,box_cy)
 
