@@ -10,9 +10,9 @@
 
 	Gray tracking
 	
-	![image](https://github.com/TheonHuang/object_tracking/gray.png）
+	![image](gray.png)
 	
 	RBG tracking
 	
-	![image](https://github.com/TheonHuang/object_tracking/RBG.png)
+	![image](RBG.png)
 
