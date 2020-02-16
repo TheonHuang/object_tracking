@@ -6,10 +6,12 @@
 	*3 execute mean_shift_main.py in color tracing can get the colorful testing result
 	*4 users can change different bin size to see the different result in build_bin.py
 	
- *Result
+*Result
+	Gray tracking
 	
-![Alt text](gray.png)
+	![Alt text](gray.gif)
 
+	RBG tracking
 	
-![Alt text](RBG.png)
+	![Alt text](RBG.gif)
 
