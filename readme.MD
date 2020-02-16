@@ -9,9 +9,9 @@
 *Result
 	Gray tracking
 	
-	![Alt text](gray.gif)
+	![image](gray.gif)
 
 	RBG tracking
 	
-	![Alt text](RBG.gif)
+	![image](RBG.gif)
 
