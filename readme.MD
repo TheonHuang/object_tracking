@@ -7,11 +7,12 @@
 	*4 users can change different bin size to see the different result in build_bin.py
 	
 *Result
+
 	Gray tracking
 	
-	![image](gray.gif)
-
+	![image](https://github.com/TheonHuang/object_tracking/gray.gif
+	
 	RBG tracking
 	
-	![image](RBG.gif)
+	![image](https://github.com/TheonHuang/object_tracking/RBG.gif)
 
