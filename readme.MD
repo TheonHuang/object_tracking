@@ -7,7 +7,7 @@
 	*4 users can change different bin size to see the different result in build_bin.py
 	
 *Result
-	*grey scale track
-	!(grey.png)
-	*RBG track
-	!(RBG.png)
+*grey scale track
+![GitHub Logo](grey.png)
+*RBG track
+![GitHub Logo](RBG.png)
