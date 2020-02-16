@@ -1,4 +1,4 @@
-# This is an <h1> How to run this project
+<h1> How to run this project
 *program should be run under python 3 with dependency numpy 1.0, opencv2
 
 	*1 execute mean_shift_main.py to run the object tracking for video
@@ -9,5 +9,7 @@
 *Result
 *grey scale track
 ![GitHub Logo](grey.png)
+Format: ![Alt Text](url)
 *RBG track
 ![GitHub Logo](RBG.png)
+Format: ![Alt Text](url)
