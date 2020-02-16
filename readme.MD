@@ -8,8 +8,8 @@
 	
 *Result
 *grey scale track
-![GitHub Logo](grey.png)
-Format: ![Alt Text](url)
+![img](grey.png)
+
 *RBG track
-![GitHub Logo](RBG.png)
-Format: ![Alt Text](url)
+![img](RBG.png)
+
