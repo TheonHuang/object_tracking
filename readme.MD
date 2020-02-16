@@ -8,6 +8,6 @@
 	
 *Result
 	*grey scale track
-	![GitHub Logo](grey.png)
+	!(grey.png)
 	*RBG track
-	![GitHub Logo](RBG.png)
+	!(RBG.png)
