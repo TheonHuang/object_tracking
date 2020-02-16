@@ -8,8 +8,8 @@
 	
  *Result
 	
-    ![gray](gray.png)
+    ![Alt text]gray(gray.png)
 
 	
-	![RGB](RBG.png)
+	![Alt text]RBG(RBG.png)
 
