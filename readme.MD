@@ -10,9 +10,9 @@
 
 	Gray tracking
 	
-![GitHub Logo](gray.png)
+![GitHub Logo](gray.gif)
 	
 	RBG tracking
 	
-![GitHub Logo](RBG.png)
+![GitHub Logo](RBG.gif)
 
