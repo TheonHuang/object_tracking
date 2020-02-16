@@ -7,9 +7,9 @@
 	*4 users can change different bin size to see the different result in build_bin.py
 	
  *Result
-	*grey scale track
-     *![img](grey.png)
+	
+    ![gray](gray.png)
 
-	*RBG track
-	 *![img](RBG.png)
+	
+	![RGB](RBG.png)
 
